@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(del *)",
-      "Bash(pnpm *)"
+      "Bash(pnpm *)",
+      "Bash(move *)",
+      "Bash(rmdir *)"
     ]
   },
   "$version": 3

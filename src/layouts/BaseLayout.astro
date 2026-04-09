@@ -29,15 +29,17 @@ const {
         <!-- \u00cdconos: Lucide Icons (CDN) -->
         <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"
         ></script>
+
+        <!-- Scripts globales -->
+        <script>
+            import "../assets/main.js";
+        </script>
     </head>
     <body>
         <!-- Overlay del men\u00fa móvil -->
         <div class="navbar__overlay" id="navOverlay" aria-hidden="true"></div>
 
         <slot />
-
-        <!-- Scripts globales -->
-        <script is:inline src="/scripts/main.js"></script>
     </body>
 </html>
 
