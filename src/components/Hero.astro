@@ -1,0 +1,218 @@
+---
+// Hero section — Portada a pantalla completa con parallax
+---
+
+<section class="hero" id="hero">
+    <div class="hero__bg" id="heroBg"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+        <div class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            Más de 20 años de experiencia
+        </div>
+
+        <h1 class="hero__title">
+            Construimos el <span class="hero__title-accent">futuro</span>, hoy
+        </h1>
+
+        <p class="hero__description">
+            Especialistas en proyectos industriales, residenciales y comerciales
+            con estándares de calidad, seguridad y compromiso ambiental.
+        </p>
+
+        <div class="hero__buttons">
+            <a href="#projects" class="btn btn-primary">
+                <i data-lucide="briefcase"></i>
+                Ver proyectos
+            </a>
+            <a href="#contact" class="btn btn-outline">
+                <i data-lucide="message-square"></i>
+                Contactanos
+            </a>
+        </div>
+
+        <div class="hero__stats">
+            <div>
+                <div class="hero__stat-number">200<span>+</span></div>
+                <div class="hero__stat-label">Proyectos entregados</div>
+            </div>
+            <div>
+                <div class="hero__stat-number">20<span>+</span></div>
+                <div class="hero__stat-label">Años de experiencia</div>
+            </div>
+            <div>
+                <div class="hero__stat-number">98<span>%</span></div>
+                <div class="hero__stat-label">Clientes satisfechos</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Desliza</span>
+        <i data-lucide="chevron-down"></i>
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .hero__bg {
+        position: absolute;
+        inset: 0;
+        background-image: url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        will-change: transform;
+    }
+
+    .hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(15, 17, 21, 0.65) 0%,
+            rgba(15, 17, 21, 0.5) 40%,
+            rgba(15, 17, 21, 0.85) 100%
+        );
+    }
+
+    .hero__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        padding: 0 1.5rem;
+    }
+
+    .hero__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 1rem;
+        background: rgba(230, 168, 23, 0.12);
+        border: 1px solid rgba(230, 168, 23, 0.25);
+        border-radius: 100px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero__badge-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.5);
+        }
+    }
+
+    .hero__title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.2rem, 6vw, 4.2rem);
+        font-weight: 900;
+        line-height: 1.08;
+        color: var(--color-white);
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.03em;
+    }
+
+    .hero__title-accent {
+        color: var(--color-primary);
+        position: relative;
+    }
+
+    .hero__description {
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .hero__stats {
+        display: flex;
+        justify-content: center;
+        gap: clamp(2rem, 5vw, 4rem);
+        margin-top: 4rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hero__stat-number {
+        font-family: var(--font-heading);
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        font-weight: 800;
+        color: var(--color-white);
+        line-height: 1;
+    }
+
+    .hero__stat-number span {
+        color: var(--color-primary);
+    }
+
+    .hero__stat-label {
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+        margin-top: 0.35rem;
+    }
+
+    .hero__scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--color-text-muted);
+        font-size: 0.75rem;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateX(-50%) translateY(0);
+        }
+        50% {
+            transform: translateX(-50%) translateY(8px);
+        }
+    }
+
+    .hero__scroll-indicator i {
+        width: 20px;
+        height: 20px;
+    }
+</style>

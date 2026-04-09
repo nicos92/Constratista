@@ -1,0 +1,200 @@
+---
+// About section — Quiénes somos con imagen y valores
+---
+
+<section class="about" id="about">
+    <div class="container">
+        <div class="about__grid">
+            <div class="about__image-wrapper reveal">
+                <img
+                    src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop"
+                    alt="Equipo de ingenieros revisando planos de construcción"
+                    loading="lazy"
+                />
+                <div class="about__image-badge">
+                    <div class="about__image-badge-number">+200</div>
+                    <div class="about__image-badge-text">
+                        Proyectos entregados
+                    </div>
+                </div>
+            </div>
+
+            <div class="about__content">
+                <div>
+                    <span class="section-label reveal">Nuestra historia</span>
+                    <h2 class="section-title reveal reveal-delay-1">
+                        Quiénes somos
+                    </h2>
+                </div>
+
+                <p class="about__text reveal reveal-delay-2">
+                    En <strong style="color: var(--color-white);"
+                        >JorgeCorp</strong
+                    >, somos una empresa contratista con más de 20 años de
+                    experiencia en el sector de la construcción. Nuestro equipo
+                    de ingenieros, arquitectos y técnicos trabaja con un solo
+                    objetivo: entregar proyectos que superen las expectativas de
+                    nuestros clientes.
+                </p>
+
+                <p class="about__text reveal reveal-delay-3">
+                    Nos distinguimos por la integración de tecnologías
+                    innovadoras, prácticas sostenibles y un riguroso control de
+                    calidad en cada etapa del proceso constructivo.
+                </p>
+
+                <div class="about__values reveal reveal-delay-4">
+                    <div class="about__value">
+                        <div class="about__value-icon">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <div>
+                            <div class="about__value-title">Seguridad</div>
+                            <div class="about__value-desc">
+                                Cero accidentes como meta
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__value">
+                        <div class="about__value-icon">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div>
+                            <div class="about__value-title">Calidad</div>
+                            <div class="about__value-desc">
+                                Certificación ISO 9001
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__value">
+                        <div class="about__value-icon">
+                            <i data-lucide="leaf"></i>
+                        </div>
+                        <div>
+                            <div class="about__value-title">Sostenibilidad</div>
+                            <div class="about__value-desc">
+                                Prácticas eco-amigables
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__value">
+                        <div class="about__value-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <div>
+                            <div class="about__value-title">Puntualidad</div>
+                            <div class="about__value-desc">
+                                Entrega en plazos acordados
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about {
+        padding: var(--section-padding) 0;
+        background: var(--color-dark);
+    }
+
+    .about__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about__image-wrapper {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+    }
+
+    .about__image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about__image-badge {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        background: rgba(15, 17, 21, 0.85);
+        backdrop-filter: blur(8px);
+        padding: 0.75rem 1.25rem;
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .about__image-badge-number {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--color-primary);
+        line-height: 1;
+    }
+
+    .about__image-badge-text {
+        font-size: 0.75rem;
+        color: var(--color-text-muted);
+        margin-top: 0.15rem;
+    }
+
+    .about__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about__text {
+        font-size: 1rem;
+        color: var(--color-text-muted);
+        line-height: 1.75;
+    }
+
+    .about__values {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .about__value {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .about__value-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(230, 168, 23, 0.1);
+        border-radius: var(--radius-sm);
+        color: var(--color-primary);
+    }
+
+    .about__value-icon i {
+        width: 20px;
+        height: 20px;
+    }
+
+    .about__value-title {
+        font-weight: 600;
+        color: var(--color-white);
+        font-size: 0.9rem;
+    }
+
+    .about__value-desc {
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+        margin-top: 0.15rem;
+    }
+</style>

@@ -1,0 +1,224 @@
+---
+// Contact section — Info de contacto + formulario
+---
+
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact__grid">
+            <div>
+                <span class="section-label reveal">Hablemos</span>
+                <h2 class="section-title reveal reveal-delay-1">Contacto</h2>
+                <p
+                    class="section-subtitle reveal reveal-delay-2"
+                    style="margin-bottom: 2rem;"
+                >
+                    ¿Tiene un proyecto en mente? Contanos tu idea y te
+                    ayudaremos a hacerla realidad.
+                </p>
+
+                <div class="contact__info">
+                    <div class="contact__item reveal reveal-delay-2">
+                        <div class="contact__item-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div>
+                            <div class="contact__item-label">Teléfono</div>
+                            <div class="contact__item-value">
+                                +54 9 1122334455
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact__item reveal reveal-delay-3">
+                        <div class="contact__item-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div>
+                            <div class="contact__item-label">
+                                Correo electrónico
+                            </div>
+                            <div class="contact__item-value">
+                                jorge@jorgecorp.com
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact__item reveal reveal-delay-4">
+                        <div class="contact__item-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div>
+                            <div class="contact__item-label">Dirección</div>
+                            <div class="contact__item-value">
+                                Av. Bonifacio Arias 999, Oficina 14
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form
+                class="contact__form reveal reveal-delay-2"
+                id="contactForm"
+                aria-label="Formulario de contacto"
+            >
+                <div class="form-group">
+                    <label for="name">Nombre completo</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Ej: Juan Pérez"
+                        required
+                        autocomplete="name"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Ej: juan@email.com"
+                        required
+                        autocomplete="email"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Ej: Consulta sobre proyecto residencial"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Describa brevemente su proyecto o consulta..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i data-lucide="send"></i>
+                    Enviar mensaje
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact {
+        padding: var(--section-padding) 0;
+        background: var(--color-dark-800);
+    }
+
+    .contact__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact__info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.75rem;
+    }
+
+    .contact__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .contact__item-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(230, 168, 23, 0.1);
+        border-radius: var(--radius-sm);
+        color: var(--color-primary);
+    }
+
+    .contact__item-icon i {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact__item-label {
+        font-size: 0.8rem;
+        color: var(--color-text-muted);
+        margin-bottom: 0.15rem;
+    }
+
+    .contact__item-value {
+        font-weight: 600;
+        color: var(--color-white);
+        font-size: 1rem;
+    }
+
+    .contact__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--color-text-muted);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        background: var(--color-dark-700);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius-sm);
+        color: var(--color-white);
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        transition:
+            border-color var(--transition-fast),
+            box-shadow var(--transition-fast);
+        outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(230, 168, 23, 0.1);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: var(--color-dark-500);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .contact__form .btn {
+        align-self: flex-start;
+        margin-top: 0.5rem;
+    }
+</style>

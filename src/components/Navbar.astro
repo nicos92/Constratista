@@ -1,0 +1,200 @@
+---
+// Navbar component — Navegación fija con efecto scroll y men\u00fa hamburguesa
+---
+
+<nav
+    class="navbar"
+    id="navbar"
+    role="navigation"
+    aria-label="Navegación principal"
+>
+    <div class="container">
+        <a href="#hero" class="navbar__logo" aria-label="JorgeCorp - Inicio">
+            <div class="navbar__logo-icon">
+                <i data-lucide="building-2"></i>
+            </div>
+            Jorge Corp.
+        </a>
+
+        <ul class="navbar__menu" id="navMenu" role="menubar">
+            <li role="none">
+                <a href="#projects" class="navbar__link" role="menuitem"
+                    >Proyectos</a
+                >
+            </li>
+            <li role="none">
+                <a href="#services" class="navbar__link" role="menuitem"
+                    >Servicios</a
+                >
+            </li>
+            <li role="none">
+                <a href="#about" class="navbar__link" role="menuitem"
+                    >Quienes Somos</a
+                >
+            </li>
+            <li role="none">
+                <a href="#contact" class="navbar__link" role="menuitem"
+                    >Contacto</a
+                >
+            </li>
+            <li role="none">
+                <a href="#gallery" class="navbar__link" role="menuitem"
+                    >Galeria</a
+                >
+            </li>
+            <li role="none">
+                <a href="#contact" class="navbar__cta" role="menuitem"
+                    >Solicitar Cotización</a
+                >
+            </li>
+        </ul>
+
+        <button
+            class="navbar__hamburger"
+            id="navHamburger"
+            aria-label="Abrir men\u00fa de navegación"
+            aria-expanded="false"
+            aria-controls="navMenu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 1.25rem 0;
+        transition: all var(--transition-base);
+        background: transparent;
+    }
+
+    .navbar.scrolled {
+        background: rgba(15, 17, 21, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar__logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: var(--font-heading);
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: var(--color-white);
+        letter-spacing: -0.02em;
+    }
+
+    .navbar__logo-icon {
+        width: 36px;
+        height: 36px;
+        background: var(--color-primary);
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-dark);
+    }
+
+    .navbar__logo-icon i {
+        width: 20px;
+        height: 20px;
+    }
+
+    .navbar__menu {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .navbar__link {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--color-text-muted);
+        position: relative;
+        padding: 0.25rem 0;
+    }
+
+    .navbar__link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--color-primary);
+        border-radius: 2px;
+        transition: width var(--transition-base);
+    }
+
+    .navbar__link:hover,
+    .navbar__link.active {
+        color: var(--color-white);
+    }
+
+    .navbar__link:hover::after,
+    .navbar__link.active::after {
+        width: 100%;
+    }
+
+    .navbar__cta {
+        padding: 0.55rem 1.25rem;
+        background: var(--color-primary);
+        color: var(--color-dark);
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: var(--radius-sm);
+        transition: all var(--transition-base);
+    }
+
+    .navbar__cta:hover {
+        background: var(--color-primary-light);
+        transform: translateY(-1px);
+    }
+
+    .navbar__hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        padding: 4px;
+        z-index: 1001;
+    }
+
+    .navbar__hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--color-white);
+        border-radius: 2px;
+        transition: all var(--transition-base);
+        transform-origin: center;
+    }
+
+    .navbar__hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .navbar__hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .navbar__hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+</style>

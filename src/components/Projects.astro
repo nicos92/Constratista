@@ -1,0 +1,193 @@
+---
+// Projects section — Tarjetas de proyectos destacados
+---
+
+<section class="projects" id="projects">
+    <div class="container">
+        <div class="projects__header">
+            <div>
+                <span class="section-label reveal">Portafolio</span>
+                <h2 class="section-title reveal reveal-delay-1">
+                    Proyectos destacados
+                </h2>
+                <p class="section-subtitle reveal reveal-delay-2">
+                    Cada obra refleja nuestro compromiso con la excelencia y la
+                    satisfacción del cliente.
+                </p>
+            </div>
+            <a href="#contact" class="btn btn-outline reveal reveal-delay-3">
+                <i data-lucide="arrow-right"></i>
+                Ver todos
+            </a>
+        </div>
+
+        <div class="projects__grid">
+            <article class="project-card reveal reveal-delay-1">
+                <img
+                    class="project-card__image"
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
+                    alt="Torre corporativa Centro Empresarial Norte"
+                    loading="lazy"
+                />
+                <div class="project-card__overlay"></div>
+                <div class="project-card__content">
+                    <span class="project-card__tag">Comercial</span>
+                    <h3 class="project-card__title">Torre Empresarial Norte</h3>
+                    <p class="project-card__desc">
+                        Complejo de oficinas de 12 pisos con certificación LEED
+                        y diseño bioclimático.
+                    </p>
+                </div>
+            </article>
+
+            <article class="project-card reveal reveal-delay-2">
+                <img
+                    class="project-card__image"
+                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop"
+                    alt="Residencial Villa Serena"
+                    loading="lazy"
+                />
+                <div class="project-card__overlay"></div>
+                <div class="project-card__content">
+                    <span class="project-card__tag">Residencial</span>
+                    <h3 class="project-card__title">
+                        Residencial Villa Serena
+                    </h3>
+                    <p class="project-card__desc">
+                        Conjunto de 48 viviendas de lujo con áreas verdes y
+                        amenidades premium.
+                    </p>
+                </div>
+            </article>
+
+            <article class="project-card reveal reveal-delay-3">
+                <img
+                    class="project-card__image"
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop"
+                    alt="Planta industrial Zona Industrial Pacífico"
+                    loading="lazy"
+                />
+                <div class="project-card__overlay"></div>
+                <div class="project-card__content">
+                    <span class="project-card__tag">Industrial</span>
+                    <h3 class="project-card__title">
+                        Planta Industrial Pacífico
+                    </h3>
+                    <p class="project-card__desc">
+                        Nave industrial de 8,500 m2 con infraestructura
+                        logística integrada.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<style>
+    .projects {
+        padding: var(--section-padding) 0;
+        background: var(--color-dark);
+    }
+
+    .projects__header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .projects__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        position: relative;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+        cursor: pointer;
+    }
+
+    .project-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--transition-slow);
+    }
+
+    .project-card:hover .project-card__image {
+        transform: scale(1.08);
+    }
+
+    .project-card__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            0deg,
+            rgba(15, 17, 21, 0.9) 0%,
+            rgba(15, 17, 21, 0.2) 50%,
+            transparent 100%
+        );
+        transition: background var(--transition-base);
+    }
+
+    .project-card:hover .project-card__overlay {
+        background: linear-gradient(
+            0deg,
+            rgba(15, 17, 21, 0.95) 0%,
+            rgba(15, 17, 21, 0.4) 50%,
+            rgba(15, 17, 21, 0.15) 100%
+        );
+    }
+
+    .project-card__content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        transform: translateY(0);
+        transition: transform var(--transition-base);
+    }
+
+    .project-card__tag {
+        display: inline-block;
+        padding: 0.25rem 0.65rem;
+        background: var(--color-primary);
+        color: var(--color-dark);
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-radius: 4px;
+        margin-bottom: 0.65rem;
+    }
+
+    .project-card__title {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--color-white);
+        margin-bottom: 0.35rem;
+    }
+
+    .project-card__desc {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        line-height: 1.5;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all var(--transition-base);
+    }
+
+    .project-card:hover .project-card__desc {
+        opacity: 1;
+        max-height: 60px;
+        margin-top: 0.5rem;
+    }
+</style>

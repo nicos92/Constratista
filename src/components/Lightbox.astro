@@ -1,0 +1,79 @@
+---
+// Lightbox component — Visor de imágenes para galería
+---
+
+<div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visor de imagen"
+>
+    <button
+        class="lightbox__close"
+        id="lightboxClose"
+        aria-label="Cerrar visor"
+    >
+        <i data-lucide="x"></i>
+    </button>
+    <img class="lightbox__image" id="lightboxImage" src="" alt="" />
+</div>
+
+<style>
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+        padding: 2rem;
+    }
+
+    .lightbox.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .lightbox__image {
+        max-width: 90%;
+        max-height: 85dvh;
+        object-fit: contain;
+        border-radius: var(--radius-md);
+        transform: scale(0.9);
+        transition: transform var(--transition-base);
+    }
+
+    .lightbox.active .lightbox__image {
+        transform: scale(1);
+    }
+
+    .lightbox__close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--color-white);
+        transition: background var(--transition-fast);
+    }
+
+    .lightbox__close:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .lightbox__close i {
+        width: 22px;
+        height: 22px;
+    }
+</style>
